@@ -1,0 +1,19 @@
+@import './helpers/reset';
+@import './helpers/variables';
+@import './helpers/myset';
+@import './helpers/mixins';
+@import './helpers/custom_class';
+
+// @import './components/SuperLikeAnimation';
+@import './page/AllPage';
+// @import './fonts/my_font';
+
+.the-main-page {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  @include xxl {
+    max-width: none;
+  }
+}

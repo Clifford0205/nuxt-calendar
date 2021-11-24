@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+
+  a {
+    color: #000;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $primary-color;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  input {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    background-color: unset;
+    border: 0;
+    padding: 0;
+  }
+
+  textarea {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  select {
+    outline: none;
+  }
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: unset;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+
+  // 防止modal抖動
+  padding-right: 0 !important;
+  overflow-y: scroll !important;
+
+  img {
+    width: 100%;
+  }
+
+  #__nuxt {
+    color: $text-color;
+    font-family: 'Noto Sans CJK TC', '微軟正黑體', sans-serif;
+    position: relative;
+
+    .transition {
+      transition: 0.4s;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: 'Noto Sans CJK TC', '微軟正黑體', sans-serif;
+      line-height: normal;
+    }
+
+    button:focus {
+      outline: 0 dotted;
+      outline: 0 auto -webkit-focus-ring-color;
+    }
+  }
+}
+
+.collapsed,
+.not-collapsed {
+  &:focus {
+    outline: none !important;
+  }
+}
+
+input[type='password'] {
+  padding: 0;
+}
+
+input[type='text'] {
+  line-height: 1.33333;
+  padding: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  appearance: textfield;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  appearance: none;
+  display: none;
+  margin: 0;
+}
+
+.mx-calendar-content {
+  td {
+    vertical-align: middle;
+  }
+
+  .cell {
+    &.active {
+      background-color: #d1f0f5 !important;
+    }
+  }
+}
+
+.scrollactive-item {
+  cursor: default !important;
+}
