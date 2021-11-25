@@ -105,8 +105,8 @@ export default {
 
       let paddingOffset = 1;
       // Some padding at the beginning
-      console.log(moment(this.activeDate).date(1).weekday());
-      for (let p = 0; p < moment(this.activeDate).date(1).weekday(); p++) {
+      // 由於是禮拜一當作第一天 所以要weekday() - 1
+      for (let p = 0; p < moment(this.activeDate).date(1).weekday() - 1; p++) {
         items.unshift({
           d: moment(monthStart).subtract(paddingOffset, 'day'),
           isPast: true,
@@ -119,11 +119,9 @@ export default {
 
       // Merge in the array of days
       items.push.apply(items, this.days);
-      console.log(items.length);
 
       // Some padding at the end if required
       if (items.length % 7) {
-        console.log(items.length);
         for (let p = 7 - (items.length % 7); p > 0; p--) {
           items.push({
             d: moment(temp),

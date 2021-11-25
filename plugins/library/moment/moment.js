@@ -1,3 +1,9 @@
+/* eslint-disable no-void */
+/* eslint-disable no-lonely-if */
+/* eslint-disable unicorn/error-message */
+/* eslint-disable no-useless-escape */
+/* eslint-disable no-undef */
+/* eslint-disable prefer-const */
 //! moment.js
 //! version : 2.29.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
