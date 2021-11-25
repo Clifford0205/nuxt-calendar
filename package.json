@@ -24,7 +24,8 @@
     "nuxt": "^2.15.7",
     "sass": "^1.43.4",
     "sass-loader": "^10.1.1",
-    "store2": "^2.12.0"
+    "store2": "^2.12.0",
+    "v-calendar-scheduler": "^0.7.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
