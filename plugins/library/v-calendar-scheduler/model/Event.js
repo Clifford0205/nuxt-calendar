@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable no-setter-return */
 import moment from 'moment';
 
 export default function Event(plainEvent) {

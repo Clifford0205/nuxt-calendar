@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/require-v-for-key -->
   <div class="v-cal">
     <header class="v-cal-header">
       <div class="v-cal-header__actions">
@@ -52,7 +53,10 @@
 </template>
 
 <script>
-import moment from 'moment';
+/* eslint-disable vue/return-in-computed-property */
+/* eslint-disable vue/no-mutating-props */
+/* eslint-disable no-prototype-builtins */
+// import moment from 'moment';
 import Event from '../model/Event';
 
 import config, { defaultLabels, defaultViews } from '../utils/config';
@@ -64,6 +68,7 @@ import Week from './views/Week';
 import Day from './views/Day';
 
 import EventDialog from './dialog';
+import moment from '@/plugins/library/moment/moment.js';
 
 export default {
   name: 'VueScheduler',
@@ -217,13 +222,14 @@ export default {
       if (this.activeDate === null) return '';
 
       if (this.activeView === 'month') {
-        return this.activeDate.format('MMMM YYYY');
+        return this.activeDate.format('YYYY/MM');
       }
 
       if (this.activeView === 'week') {
-        const weekStart = moment(this.activeDate).day(0);
-        const weekEnd = moment(this.activeDate).day(6);
-        return weekStart.format('MMM D') + ' - ' + weekEnd.format('MMM D');
+        return null;
+        // const weekStart = moment(this.activeDate).day(0);
+        // const weekEnd = moment(this.activeDate).day(6);
+        // return weekStart.format('MMM D') + ' - ' + weekEnd.format('MMM D');
       }
 
       if (this.activeView === 'day') {

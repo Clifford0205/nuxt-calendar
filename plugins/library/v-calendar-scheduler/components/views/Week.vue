@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/no-use-v-if-with-v-for  -->
   <!-- eslint-disable vue/require-v-for-key  -->
   <section class="v-cal-content">
     <div class="v-cal-weekdays">
@@ -12,7 +13,8 @@
       </div>
       <div class="v-cal-weekday__wrapper">
         <div v-for="day in days" class="v-cal-weekday-item">
-          {{ day.d.format('ddd DD/MM') }}
+          {{ day.d.format('ddd') }} <br />
+          {{ day.d.format('DD') }}
         </div>
       </div>
     </div>
@@ -91,11 +93,19 @@
 </template>
 
 <script>
-import moment from 'moment';
+// import moment from 'moment';
+
 import { EventBus } from '../EventBus';
 import EventItem from '../EventItem';
 import IsView from '../mixins/IsView';
 import ShowsTimes from '../mixins/ShowsTimes';
+import moment from '@/plugins/library/moment/moment.js';
+
+moment.updateLocale('zh-tw', {
+  week: {
+    dow: 1, // Monday is the first day of the week.
+  },
+});
 
 export default {
   name: 'Week',
@@ -113,7 +123,9 @@ export default {
     },
   },
   mounted() {
-    this.buildCalendar();
+    setTimeout(() => {
+      this.buildCalendar();
+    }, 0);
   },
   methods: {
     timeClicked(data) {
@@ -125,11 +137,19 @@ export default {
 
       this.days = [];
 
+      // moment.updateLocale('zh-tw', {
+      //   week: {
+      //     dow: 1, // Monday is the first day of the week.
+      //   },
+      // });
+
       const now = moment();
 
-      const temp = moment(this.activeDate).day(
+      // eslint-disable-next-line prefer-const
+      let temp = moment(this.activeDate).day(
         moment.localeData().firstDayOfWeek()
       );
+
       const w = temp.week();
 
       this.days = [];
@@ -169,8 +189,9 @@ export default {
           events: mappedEvents,
         };
         this.days.push(newDay);
-
+        // console.log(this.days);
         temp.add(1, 'day');
+        // eslint-disable-next-line no-undef
       } while (temp.week() === w);
     },
   },

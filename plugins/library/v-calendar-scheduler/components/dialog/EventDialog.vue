@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable vue/require-v-for-key -->
   <transition name="zoom-out">
     <div v-if="isActive" class="v-cal-dialog">
       <div class="v-cal-dialog__bg" @click="cancel"></div>
@@ -45,6 +46,8 @@
 </template>
 
 <script>
+/* eslint-disable array-callback-return */
+
 import moment from 'moment';
 import Event from '../../model/Event';
 import EventDialogInput from './EventDialogInput';

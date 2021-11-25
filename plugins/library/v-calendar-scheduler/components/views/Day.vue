@@ -1,5 +1,7 @@
 <template>
   <!-- eslint-disable vue/require-v-for-key  -->
+  <!-- eslint-disable vue/no-use-v-if-with-v-for -->
+
   <section class="v-cal-content">
     <div class="v-cal-weekdays">
       <div class="v-cal-weekday-item">{{ activeDate.format('ddd DD/MM') }}</div>

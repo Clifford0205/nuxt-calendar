@@ -1443,6 +1443,10 @@
     return this.localeData().weekdays(this, format);
   });
 
+  addFormatToken('ddddd', 0, 0, function (format) {
+    return this.localeData().weekdaysEng(this, format);
+  });
+
   addFormatToken('e', 0, 0, 'weekday');
   addFormatToken('E', 0, 0, 'isoWeekday');
 

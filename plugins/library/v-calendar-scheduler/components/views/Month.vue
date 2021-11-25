@@ -37,6 +37,7 @@
 </template>
 
 <script>
+// import moment from 'moment';
 import { EventBus } from '../EventBus';
 import EventItem from '../EventItem';
 import IsView from '../mixins/IsView';
